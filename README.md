@@ -4,7 +4,7 @@
 TabTasker is a Chrome extension designed to help you manage page-specific notes and tasks. It allows users to record notes and to-dos based on the URL of the webpage they are on, enabling them to stay focused and organized while working with different pages.
 
 
-<img src="images/TabTasker1.png" alt="TabTasker" max-width="500"/>
+<img src="images/TabTasker1.png" alt="TabTasker" width="100%"/>
 <img src="images/TabTasker2.png" alt="TabTasker To dos" max-width="500"/>
 <img src="images/TabTasker3.png" alt="TabTasker Alert" max-width="500"/>
 <img src="images/TabTasker4.png" alt="TabTasker Show Recorded URLs button" max-width="500"/>
