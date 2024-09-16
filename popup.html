@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Notes and Tasks</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="Sortable.min.js"></script>
+    <script src="sweetalert2.js"></script>
+</head>
+
+<body id="root">
+    <button id="show-urls-btn">Show Recorded URLs</button>
+    <h3 id="myTitle">What are you thinking about?</h3>
+    <div id="input-area">
+        <textarea id="input-text" placeholder="Enter your note or task"></textarea>
+        <div class="type-box">
+            <label><input type="radio" id="note" name="type" value="note" checked>Note</label>
+            <label><input type="radio" id="task" name="type" value="task">Task</label>
+        </div>
+        <button id="save-btn">Save</button>
+    </div>
+    <br>
+    <ul id="items-list"></ul>
+    <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+body {
+    width: 300px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+
+.url-box {
+    text-align: left;
+    color: rgb(24, 24, 133);
+    font-size: 12px;
+}
+
+#input-area {
+    margin-bottom: 6px;
+}
+
+#input-text {
+    width: calc(100% - 4px);
+    height: 60px;
+    padding: 4px 2px;
+    margin-bottom: 5px;
+    resize: none;
+}
+
+.type-box {
+    margin: 8px 8px 18px -5px;
+}
+
+.type-box>label {
+    cursor: pointer;
+}
+
+#items-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#items-list li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: baseline;
+    cursor: grab;
+}
+
+#items-list li:active {
+    cursor: grabbing;
+}
+
+#items-list li span {
+    flex-grow: 1;
+    margin: 0 5px;
+}
+
+
+button {
+    border-radius: 4px;
+    padding: 4px 6px;
+    background: none;
+    border: 1px solid;
+    margin-left: 5px;
+    cursor: pointer;
+    border-color: rgb(56, 56, 56);
+    opacity: 0.5;
+}
+
+#save-btn {
+    margin-left: 0px;
+    color: white;
+    background-color: rgb(51, 51, 51);
+    opacity: 1;
+}
+
+#show-urls-btn {
+    width: 100%;
+    margin-left: 0px;
+}
+
+#save-btn:hover {
+    opacity: 0.7;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+
+
+#items-list li input[type="checkbox"] {
+    cursor: default;
+}

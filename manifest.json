@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "TabTasker",
+    "version": "1.0",
+    "description": "A Chrome extension for managing page-specific notes and tasks.",
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+}
