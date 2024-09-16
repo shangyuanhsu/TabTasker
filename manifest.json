@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "TabTasker | 頁籤追蹤",
     "version": "1.0",
-    "description": "TabTasker | 頁籤追蹤 is a Chrome extension designed to help you manage page-specific notes and tasks. It allows users to record notes and to-dos based on the URL of the webpage they are on, enabling them to stay focused and organized while working with different pages. TabTasker | 頁籤追蹤 是一個 Chrome 擴展，旨在幫助您管理特定於頁面的筆記和任務。它允許用戶根據當前網頁的 URL 記錄筆記和待辦事項，幫助他們在處理不同頁面時保持專注和組織性。",
+    "description": "TabTasker | 頁籤追蹤 is a Chrome extension designed to help you manage page-specific notes and tasks. It allows users to record notes and to-dos based on the URL of the webpage they are on, enabling them to stay focused and organized while working with different pages. TabTasker.",
     "permissions": [
         "storage",
         "tabs",
