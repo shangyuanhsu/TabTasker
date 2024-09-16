@@ -27,6 +27,22 @@ const loadItems = () => {
 
 const renderItems = (items) => {
     itemsList.innerHTML = '';
+
+    if (!items.length) {
+        return;
+    }
+
+    if (!document.querySelector('#remove-all')) {
+        const button = document.createElement('button');
+        button.id = 'remove-all';
+        button.textContent = 'Remove all';
+        document.querySelector('#remove-all-box').appendChild(button);
+
+        document.querySelector('#remove-all').addEventListener('click', () => {
+            deleteItem('all');
+        })
+    }
+
     items.forEach((item, index) => {
         const li = document.createElement('li');
         if (item.type === 'task') {
@@ -67,6 +83,7 @@ const toggleTaskCompletion = (index) => {
 };
 
 const deleteItem = (index) => {
+
     Swal.fire({
         width: '80%',
         text: "Do you want to delete?",
@@ -77,11 +94,15 @@ const deleteItem = (index) => {
         if (result.isConfirmed) {
             chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
                 const url = tabs[0].url;
+                if(index === 'all'){
+                    chrome.storage.sync.remove(url);
+                }
                 chrome.storage.sync.get(url, (data) => {
                     const items = data[url] || [];
                     items.splice(index, 1);
                     chrome.storage.sync.set({ [url]: items }, loadItems);
                     if (items.length < 1) {
+                        document.querySelector('#remove-all').remove();
                         chrome.storage.sync.remove(url);
                     }
                 });
@@ -91,13 +112,6 @@ const deleteItem = (index) => {
                     showConfirmButton: false,
                     timer: 600
                 });
-            });
-        } else {
-            Swal.fire({
-                width: '80%',
-                text: "Ok !",
-                showConfirmButton: false,
-                timer: 600
             });
         }
     });
@@ -151,9 +165,10 @@ const showTitle = () => {
 const saveEvent = () => {
     const text = inputText.value.trim();
     const type = document.querySelector('input[name="type"]:checked').value;
+    inputText.value = '';
     if (text) {
+        console.log(text);
         saveItem(text, type);
-        inputText.value = '';
         loadItems();
     }
 }
@@ -168,7 +183,7 @@ const showRecordedUrls = () => {
 
         for (let i = 0; i < urls.length; i++) {
             formattedUrls += `
-            <a href="${urls[i]}">${i + 1} - ${urls[i]}</a><br>
+            <a href="${urls[i]}" target="_blank">${i + 1} - ${urls[i]}</a><br>
            `;
         }
 
@@ -186,6 +201,12 @@ const init = () => {
     showTitle();
     loadItems();
     saveBtn.addEventListener('click', saveEvent);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            saveEvent();
+        }
+    });
     showUrlsBtn.addEventListener('click', showRecordedUrls);
 }
 
