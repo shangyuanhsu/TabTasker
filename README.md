@@ -2,7 +2,11 @@
 
 ## Description
 
-TabTasker is a Chrome extension designed to help you manage page-specific notes and tasks. It allows users to record notes and to-dos based on the URL of the webpage they are on, enabling them to stay focused and organized while working with different pages.
+TabTasker | 頁籤追蹤 is a Chrome extension designed to boost productivity by allowing users to manage notes and tasks based on the URL of each webpage. Whether you're juggling multiple projects or browsing through numerous tabs, TabTasker helps you stay organized and focused, ensuring that important tasks don’t fall through the cracks.
+
+By linking notes and to-dos to specific URLs, users can easily record thoughts and tasks related to each page and quickly retrieve them the next time they visit. It's a simple and intuitive solution for keeping your workflow efficient and your workspaces organized.
+
+TabTasker is perfect for users who need to handle multiple pages at once or those who want an easy way to track notes and tasks directly from their browser.
 
 
 <img src="images/TabTasker1.png" alt="TabTasker" width="100%"/>
@@ -47,9 +51,16 @@ I hope it can help those who face similar issues.
 
 ## 描述  
 
-TabTasker 是一款 Chrome 擴充功能，主要是幫助使用者依據網頁 URL 來管理相關的筆記和任務，因此可提高使用者在處理不同頁面時的專注力。
+TabTasker | 頁籤追蹤 是一款專為提高工作效率設計的 Chrome 擴充功能，讓使用者能夠根據每個網頁的 URL 來管理筆記和待辦事項。無論你在同時處理多個專案，還是瀏覽大量的網頁，TabTasker 都可以幫助你保持專注，避免遺漏重要的任務。
+
+透過將筆記和待辦事項與網頁 URL 綁定，使用者可以輕鬆記錄每個頁面相關的想法和工作，並在下次回到該網頁時，快速取回之前的內容。它是一個簡單、直觀的解決方案，讓你的工作流程更加高效和井然有序。
+
+TabTasker 不僅適合需要同時處理多個頁面的使用者，也適合那些需要在瀏覽器中隨時記錄筆記和管理任務的人。
+
 
 <img src="images/TabTasker5.png" alt="頁籤追蹤" width="100%"/>
+
+
 
 ## 功能特點
 
