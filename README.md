@@ -46,6 +46,7 @@ I hope it can help those who face similar issues.
 # TabTasker | 頁籤追蹤 
 
 ## 描述  
+
 TabTasker 是一款 Chrome 擴充功能，主要是幫助使用者依據網頁 URL 來管理相關的筆記和任務，因此可提高使用者在處理不同頁面時的專注力。
 
 <img src="images/TabTasker5.png" alt="頁籤追蹤" width="100%"/>
