@@ -28,7 +28,8 @@ TabTasker is perfect for users who need to handle multiple pages at once or thos
 
 1. Go to the [Chrome Web Store](https://chrome.google.com/webstore).
 2. Search for "TabTasker" and click on "Add to Chrome".
-3. Follow the prompts to complete the installation.
+3. You can also directly access the extension's page and install it by clicking the following link: [TabTasker](https://chromewebstore.google.com/detail/tabtasker-%E9%A0%81%E7%B1%A4%E8%BF%BD%E8%B9%A4/dcabnoagnoehmdohofnlbbpfhmclddbo).
+3. Finally, follow the prompts to complete the installation.
 
 
 ## References
@@ -74,7 +75,8 @@ TabTasker 不僅適合需要同時處理多個頁面的使用者，也適合那�
 
 1. 前往 [Chrome 線上應用程式商店](https://chrome.google.com/webstore)。
 2. 搜尋「TabTasker」並點擊「添加至 Chrome」。
-3. 按照提示完成安裝。
+3. 也可以直接點擊以下連結，直接進入套件頁面進行安裝：[TabTasker | 頁籤追蹤](https://chromewebstore.google.com/detail/tabtasker-%E9%A0%81%E7%B1%A4%E8%BF%BD%E8%B9%A4/dcabnoagnoehmdohofnlbbpfhmclddbo)。
+4. 最後按照提示完成安裝。
 
 ## 參考資料
 
