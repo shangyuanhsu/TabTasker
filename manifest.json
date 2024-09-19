@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "TabTasker | 頁籤追蹤 ",
-    "version": "1.0",
+    "version": "1.1",
     "description": "TabTasker | 頁籤追蹤 is a Chrome extension for managing notes and tasks tied to specific URLs, enhancing productivity and focus.",
     "permissions": [
         "storage",
