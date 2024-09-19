@@ -69,7 +69,7 @@ const renderItems = (items) => {
 
         itemsList.appendChild(li);
     });
-    chrome.action.setBadgeText({ text: '❕' });
+    chrome.action.setBadgeText({ text: ' ! '  });
     chrome.action.setBadgeBackgroundColor({ color: 'rgb(51, 51, 51)' });
 };
 

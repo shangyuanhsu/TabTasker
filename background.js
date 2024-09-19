@@ -18,7 +18,7 @@ const updateBadge = (url) => {
   chrome.storage.sync.get(url, (data) => {
     const items = data[url] || [];
     if (items.length) {
-      chrome.action.setBadgeText({ text: '❕' });
+      chrome.action.setBadgeText({ text: ' ! ' });
       chrome.action.setBadgeBackgroundColor({ color: 'rgb(51, 51, 51)' });
     } else {
       chrome.action.setBadgeText({ text: '' });
@@ -30,13 +30,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "checkData") {
     const url = message.url;
     updateBadge(url);
-    sendResponse({ items: data[url] || [] });
     return true; 
   }
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
-  if (changeInfo.status === 'complete') { // 確保頁面已經完全載入
+  if (changeInfo.status === 'complete') {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const url = tabs[0].url;
       updateBadge(url);
@@ -44,7 +43,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
   }
 });
 
-// 監聽分頁切換事件
 chrome.tabs.onActivated.addListener((activeInfo) => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const url = tabs[0].url;
