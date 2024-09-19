@@ -69,6 +69,8 @@ const renderItems = (items) => {
 
         itemsList.appendChild(li);
     });
+    chrome.action.setBadgeText({ text: '❕' });
+    chrome.action.setBadgeBackgroundColor({ color: 'rgb(51, 51, 51)' });
 };
 
 const toggleTaskCompletion = (index) => {
@@ -104,6 +106,7 @@ const deleteItem = (index) => {
                     if (items.length < 1) {
                         document.querySelector('#remove-all').remove();
                         chrome.storage.sync.remove(url);
+                        chrome.action.setBadgeText({ text: '' });
                     }
                 });
                 Swal.fire({
