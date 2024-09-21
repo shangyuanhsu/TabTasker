@@ -2,6 +2,7 @@ const inputText = document.querySelector('#input-text');
 const saveBtn = document.querySelector('#save-btn');
 const itemsList = document.querySelector('#items-list');
 const showUrlsBtn = document.querySelector('#show-urls-btn');
+let isComposing = false;
 
 const saveItem = (text, type) => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -69,7 +70,7 @@ const renderItems = (items) => {
 
         itemsList.appendChild(li);
     });
-    chrome.action.setBadgeText({ text: ' ! '  });
+    chrome.action.setBadgeText({ text: ' ! ' });
     chrome.action.setBadgeBackgroundColor({ color: 'rgb(51, 51, 51)' });
 };
 
@@ -96,7 +97,7 @@ const deleteItem = (index) => {
         if (result.isConfirmed) {
             chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
                 const url = tabs[0].url;
-                if(index === 'all'){
+                if (index === 'all') {
                     chrome.storage.sync.remove(url);
                 }
                 chrome.storage.sync.get(url, (data) => {
@@ -165,14 +166,25 @@ const showTitle = () => {
     titleElement.innerText = messages[randomIndex];
 }
 
+
+
+document.addEventListener('compositionstart', () => {
+    isComposing = true;
+});
+
+document.addEventListener('compositionend', () => {
+    isComposing = false;
+});
+
 const saveEvent = () => {
     const text = inputText.value.trim();
     const type = document.querySelector('input[name="type"]:checked').value;
-    inputText.value = '';
+
     if (text) {
         console.log(text);
         saveItem(text, type);
         loadItems();
+        inputText.value = '';
     }
 }
 
@@ -205,7 +217,7 @@ const init = () => {
     loadItems();
     saveBtn.addEventListener('click', saveEvent);
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
+        if (e.key === 'Enter' && !e.shiftKey && !isComposing) {
             e.preventDefault();
             saveEvent();
         }
