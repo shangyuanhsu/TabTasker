@@ -166,16 +166,6 @@ const showTitle = () => {
     titleElement.innerText = messages[randomIndex];
 }
 
-
-
-document.addEventListener('compositionstart', () => {
-    isComposing = true;
-});
-
-document.addEventListener('compositionend', () => {
-    isComposing = false;
-});
-
 const saveEvent = () => {
     const text = inputText.value.trim();
     const type = document.querySelector('input[name="type"]:checked').value;
@@ -216,12 +206,24 @@ const init = () => {
     showTitle();
     loadItems();
     saveBtn.addEventListener('click', saveEvent);
-    document.addEventListener('keydown', (e) => {
+    
+    document.querySelector('#input-text').addEventListener('compositionstart', () => {
+        isComposing = true;
+    });
+    
+    document.querySelector('#input-text').addEventListener('compositionend', () => {
+        isComposing = false;
+    });
+
+    document.querySelector('#input-text').addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey && !isComposing) {
             e.preventDefault();
             saveEvent();
         }
     });
+
+   
+
     showUrlsBtn.addEventListener('click', showRecordedUrls);
 }
 
